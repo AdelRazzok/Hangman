@@ -1,2 +1,2 @@
-Jeu du Pendu
-7 vies
+#Jeu du Pendu
+#7 vies
