@@ -54,15 +54,18 @@ startBtn.addEventListener('click', () => {
                     isGood = true;
                     spanTab[i].innerHTML = this.dataset.value;
                 }
+                this.style.backgroundColor = "black";
             }
             if (!isGood) {
                 nbTry --;
                 tryCount.innerHTML = nbTry;
             }
+
+            
+
             if (nbTry <= 0) {
                 tryCount.innerHTML = "PERDU";
             }
         });
     });
-    
 });
