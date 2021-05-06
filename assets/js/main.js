@@ -21,9 +21,14 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+tryCount.innerHTML = nbTry;
+
 startBtn.addEventListener('click', () => {
     
+    // Récupère un mot du tableau au hasard
     let gameWord = myWords[getRandomInt(myWords.length-1)];
+    
+    // Transforme le mot en tableau de caractères
     let cutGameWord = gameWord.split('');
     
     // Parcourir le tableau et créer un span pour chaque lettre
@@ -37,14 +42,27 @@ startBtn.addEventListener('click', () => {
 
     keybord.forEach(element => {
         element.addEventListener('click', function() {
+            
+            // Récuperer nos span en tableau
             let spanTab = document.querySelectorAll("span");
+            let isGood = false;
 
+            // Compare l'entrée clavier à chaque lettre du mot
             for (let i = 0; i < spanTab.length; i++) {
 
                 if (this.dataset.value == spanTab[i].getAttribute("id")) {
+                    isGood = true;
                     spanTab[i].innerHTML = this.dataset.value;
                 }
             }
+            if (!isGood) {
+                nbTry --;
+                tryCount.innerHTML = nbTry;
+            }
+            if (nbTry <= 0) {
+                tryCount.innerHTML = "PERDU";
+            }
         });
     });
+    
 });
