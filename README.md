@@ -1,2 +1,0 @@
-# jeuDuPendu
-# jeuDuPendu
