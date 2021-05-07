@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .container {
@@ -14,7 +14,7 @@
 }
 
 .screen-game {
-    margin-top: 5rem;
+    margin-top: 10px;
     width: 200px;
     height: 200px;
     border: 1px solid black;
@@ -31,8 +31,9 @@
 
 .btn {
     padding : 10px 20px;
+    border: unset;
     border-radius: 10px;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
     color: white;
     background-color: cadetblue;
 }
@@ -41,8 +42,9 @@
     margin-top: 2rem;
     margin-right: 1rem;
     padding: 10px;
+    border: unset;
     border-radius: 10px;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
     color: white;
     background-color: cadetblue;
 }
@@ -50,4 +52,37 @@
 .btn:active, .btn-start:active {
     box-shadow: unset;
     transform: translateY(3px);
+}
+
+.btn:disabled, .btn-start:disabled {
+    background-color: grey;
+    box-shadow: unset;
+}
+
+/* Media Queries */ 
+
+@media screen and (max-width: 700px) {
+
+    * {
+        font-size: 1.2rem;
+    }
+    
+    .screen-game {
+        display: none;
+    }
+
+    .keybord {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+    .btn {
+        margin: 5px;
+    }
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

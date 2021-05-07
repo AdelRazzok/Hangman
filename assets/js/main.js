@@ -60,7 +60,7 @@ startBtn.addEventListener('click', () => {
                     spanTab[i].innerHTML = this.dataset.value;
                     score++;
                 }
-                this.style.backgroundColor = "black";
+                this.disabled = true;
             }
             if (!isGood) {
                 nbTry --;
@@ -70,10 +70,11 @@ startBtn.addEventListener('click', () => {
                 alert("Vous avez gagné !");
             }
             if (nbTry <= 0) {
-                tryCount.innerHTML = "PERDU";
+                alert("Vous avez perdu !");
+                keybord.forEach(element => {
+                    element.disabled = true;
+                });
             }
-            console.log("Score : " + score);
-            console.log("Essais restants : " + nbTry);
         });
     });
 
