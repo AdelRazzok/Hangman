@@ -16,14 +16,35 @@
 /* ELEMENTS DU JEU */
 
 .perso {
-    width: 20%;
-    height: 10%;
-    background-color: black;
-    border-radius: 50%;
+    width: 40%;
+    height: 25%;
     position: absolute;
     bottom: 20%;
+    left: 30%;
+}
+.perso-img {
+    width: 100%;
+    height: 100%;
+}
+
+.rock {
+    width: 20%;
+    height: 15%;
+    position: absolute;
+    top: 20%;
     left: 40%;
-    right: 40%;
+
+    animation-duration: 1s;
+    animation-name: falling;
+}
+
+@keyframes falling {
+    0% {
+        top: 20%;
+    }
+    100% {
+        top: 60%;
+    }
 }
 
 .heart {
@@ -38,6 +59,14 @@
     top: 6px;
     margin-left: 10px;
     font-size: 20px;
+}
+
+.chest {
+    width: 40%;
+    height: 100px;
+    position: absolute;
+    bottom: 20%;
+    left: 30%;
 }
 
 /* ECRAN */
