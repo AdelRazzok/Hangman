@@ -88,7 +88,7 @@ startBtn.addEventListener('click', () => {
         details.innerHTML = "";
 
         keybord.forEach(element => {
-            element.style.backgroundColor = "rgb(95, 158, 160)";
+            element.disabled = false;
         });
 
         // Récupère un mot du tableau au hasard
