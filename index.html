@@ -11,49 +11,52 @@
 
 <body>
     <div class="container">
-        <div class="screen-game">
-            <p id="tryCount" style="text-align: center; margin-top: 2rem;"></p>
+        <div id="screen" class="screen-game">
+            <img src="assets/img/heart.png" alt="heart" class="heart">
+            <span id="tryCount" class="life"></span>
+
+            <div id="cutScreen" class="cut-screen"></div>
         </div>
 
-        <div class="details" id="details">
-            
-        </div>
+        <div class="details" id="details"></div>
 
-        <div class="keybord">
-            <button type="button" class="btn" data-type="letter" data-value="A">A</button>
-            <button type="button" class="btn" data-type="letter" data-value="Z">Z</button>
-            <button type="button" class="btn" data-type="letter" data-value="E">E</button>
-            <button type="button" class="btn" data-type="letter" data-value="R">R</button>
-            <button type="button" class="btn" data-type="letter" data-value="T">T</button>
-            <button type="button" class="btn" data-type="letter" data-value="Y">Y</button>
-            <button type="button" class="btn" data-type="letter" data-value="U">U</button>
-            <button type="button" class="btn" data-type="letter" data-value="I">I</button>
-            <button type="button" class="btn" data-type="letter" data-value="O">O</button>
-            <button type="button" class="btn" data-type="letter" data-value="P">P</button>
-        </div>
-        <div class="keybord">
-            <button type="button" class="btn" data-type="letter" data-value="Q">Q</button>
-            <button type="button" class="btn" data-type="letter" data-value="S">S</button>
-            <button type="button" class="btn" data-type="letter" data-value="D">D</button>
-            <button type="button" class="btn" data-type="letter" data-value="F">F</button>
-            <button type="button" class="btn" data-type="letter" data-value="G">G</button>
-            <button type="button" class="btn" data-type="letter" data-value="H">H</button>
-            <button type="button" class="btn" data-type="letter" data-value="J">J</button>
-            <button type="button" class="btn" data-type="letter" data-value="K">K</button>
-            <button type="button" class="btn" data-type="letter" data-value="L">L</button>
-            <button type="button" class="btn" data-type="letter" data-value="M">M</button>
-        </div>
-        <div class="keybord">
-            <button type="button" class="btn" data-type="letter" data-value="W">W</button>
-            <button type="button" class="btn" data-type="letter" data-value="X">X</button>
-            <button type="button" class="btn" data-type="letter" data-value="C">C</button>
-            <button type="button" class="btn" data-type="letter" data-value="V">V</button>
-            <button type="button" class="btn" data-type="letter" data-value="B">B</button>
-            <button type="button" class="btn" data-type="letter" data-value="N">N</button>
-        </div>
         <div class="btn-container">
-            <button type="button" class="btn-start" data-type="start">Commencer</button>
-            <button type="button" class="btn-start" data-type="reset" disabled>Recommencer</button>
+            <div class="keybord">
+                <button type="button" class="btn" data-type="letter" data-value="A">A</button>
+                <button type="button" class="btn" data-type="letter" data-value="Z">Z</button>
+                <button type="button" class="btn" data-type="letter" data-value="E">E</button>
+                <button type="button" class="btn" data-type="letter" data-value="R">R</button>
+                <button type="button" class="btn" data-type="letter" data-value="T">T</button>
+                <button type="button" class="btn" data-type="letter" data-value="Y">Y</button>
+                <button type="button" class="btn" data-type="letter" data-value="U">U</button>
+                <button type="button" class="btn" data-type="letter" data-value="I">I</button>
+                <button type="button" class="btn" data-type="letter" data-value="O">O</button>
+                <button type="button" class="btn" data-type="letter" data-value="P">P</button>
+            </div>
+            <div class="keybord">
+                <button type="button" class="btn" data-type="letter" data-value="Q">Q</button>
+                <button type="button" class="btn" data-type="letter" data-value="S">S</button>
+                <button type="button" class="btn" data-type="letter" data-value="D">D</button>
+                <button type="button" class="btn" data-type="letter" data-value="F">F</button>
+                <button type="button" class="btn" data-type="letter" data-value="G">G</button>
+                <button type="button" class="btn" data-type="letter" data-value="H">H</button>
+                <button type="button" class="btn" data-type="letter" data-value="J">J</button>
+                <button type="button" class="btn" data-type="letter" data-value="K">K</button>
+                <button type="button" class="btn" data-type="letter" data-value="L">L</button>
+                <button type="button" class="btn" data-type="letter" data-value="M">M</button>
+            </div>
+            <div class="keybord">
+                <button type="button" class="btn" data-type="letter" data-value="W">W</button>
+                <button type="button" class="btn" data-type="letter" data-value="X">X</button>
+                <button type="button" class="btn" data-type="letter" data-value="C">C</button>
+                <button type="button" class="btn" data-type="letter" data-value="V">V</button>
+                <button type="button" class="btn" data-type="letter" data-value="B">B</button>
+                <button type="button" class="btn" data-type="letter" data-value="N">N</button>
+            </div>
+            <div class="btn-start-container">
+                <button type="button" class="btn-start" data-type="start">Commencer</button>
+                <button type="button" class="btn-start" data-type="reset" disabled>Recommencer</button>
+            </div>
         </div>    
     </div>
 

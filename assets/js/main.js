@@ -1,6 +1,7 @@
 const keybord = document.querySelectorAll('button[data-type="letter"]');
 const startBtn = document.querySelector('button[data-type="start"]');
 const resetBtn = document.querySelector('button[data-type="reset"]');
+
 const details = document.getElementById("details");
 const myWords = [
     "PREMIER",
@@ -35,7 +36,8 @@ startBtn.addEventListener('click', () => {
     
     // Transforme le mot en tableau de caractères
     let cutGameWord = gameWord.split('');
-    
+    let nbChar = 0;
+
     // Parcourir le tableau et créer un span pour chaque lettre
     for (let i = 0; i < cutGameWord.length; i++) {
         let mySpan = document.createElement("span");
@@ -43,7 +45,32 @@ startBtn.addEventListener('click', () => {
         mySpan.setAttribute("id", cutGameWord[i]);
         mySpan.innerHTML = " _ ";
         details.append(mySpan);
+
+        nbChar++;
     }
+
+    // Découpe l'écran en autant de parties que de caractères
+    let a = 1;
+    for (let i = nbChar; i > 0; i--) {
+        let myDiv = document.createElement("div");
+
+        myDiv.setAttribute("id", "div" + a);
+        myDiv.setAttribute("class", "cut-div");
+        cutScreen.append(myDiv);
+        a++;
+    }
+    
+    const myCutDivs = document.querySelectorAll('div[class="cut-div"]');
+    myCutDivs.forEach(element => {
+        element.style.width = "500px";
+        element.style.border = "1px solid black";
+    });
+
+    let createPerso = document.createElement("div")
+    createPerso.setAttribute("id", "perso");
+    createPerso.setAttribute("class", "perso");
+
+    myCutDivs[0].append(createPerso); 
 
     keybord.forEach(element => {
         element.addEventListener('click', function() {
