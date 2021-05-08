@@ -17,7 +17,7 @@
 
 .perso {
     width: 40%;
-    height: 25%;
+    height: 120px;
     position: absolute;
     bottom: 20%;
     left: 30%;
@@ -48,8 +48,8 @@
 }
 
 .heart {
-    width: 16%;
-    height: 6%;
+    width: 30px;
+    height: 25px;
     margin-top: 2%;
     margin-left: 2%;
 }
@@ -111,7 +111,7 @@
     border-radius: 10px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
     color: white;
-    background-color: cadetblue;
+    background-color: rgb(100, 149, 100);
 }
 
 .btn-start {
@@ -122,7 +122,7 @@
     border-radius: 10px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
     color: white;
-    background-color: cadetblue;
+    background-color: rgb(100, 149, 100);
 }
 
 .btn:active, .btn-start:active {

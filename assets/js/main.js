@@ -3,14 +3,15 @@ const startBtn = document.querySelector('button[data-type="start"]');
 const resetBtn = document.querySelector('button[data-type="reset"]');
 
 const details = document.getElementById("details");
-const myWords = [
-    "COURT",
-    "COURT",
-    "COURT",
-    "LOOOOONG",
-    "LOOOOONG",
-    "LOOOOONG"
-];
+
+const myWords = ["TESTMOI"];
+
+// const myWords = [
+//     "ADMIRER",
+//     "BOISSON",
+//     "CABARET",
+
+// ];
 
 var nbTry = 7;
 var score = 0;
@@ -59,7 +60,7 @@ startBtn.addEventListener('click', () => {
 
     myCutDivs.forEach(element => {
         element.style.width = "500px";
-        element.style.border = "1px solid black";
+        //element.style.border = "1px solid black";
     });
 
     // Création du compteur de vie et du personnage
@@ -129,7 +130,7 @@ startBtn.addEventListener('click', () => {
                 setTimeout(function() {
                     createRock.remove();
                     imagePerso.src = "assets/img/fail_perso.png";
-                }, 1000);
+                }, 500);
             } else {
                 myCutDivs[score].append(createPerso);
             }
@@ -154,7 +155,12 @@ startBtn.addEventListener('click', () => {
                 keybord.forEach(element => {
                     element.disabled = true;
                 });
-                imagePerso.src = "assets/img/death_perso.png";
+                setTimeout(function() {
+                    imagePerso.src = "assets/img/death_perso.png";
+                    imagePerso.style.height = "60px";
+                    imagePerso.style.position = "absolute";
+                    imagePerso.style.bottom = "0";
+                }, 1500);
             }
         });
     });
