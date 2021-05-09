@@ -1,9 +1,12 @@
+// Renvoie un entier aléatoire dans l'intervalle passé en paramètre
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 const keybord = document.querySelectorAll('button[data-type="letter"]');
 const startBtn = document.querySelector('button[data-type="start"]');
 const resetBtn = document.querySelector('button[data-type="reset"]');
-
 const details = document.getElementById("details");
-
 const myWords = [
     "ADMIRER",
     "BOISSON",
@@ -20,17 +23,16 @@ const myWords = [
     "MARTYRE"
 ];
 
+const bodySound = new Audio("./assets/sounds/body_falling.mp3");
+const rockSound = new Audio("./assets/sounds/destroy_rock.wav");
+const winSound = new Audio("./assets/sounds/win_sound.mp3");
+
 var nbTry = 7;
 var score = 0;
 
-// Renvoie un entier aléatoire dans l'intervalle passé en paramètre
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
 
+// Le jeu démare au click sur le bouton "Commencer"
 startBtn.addEventListener('click', () => {
-
-    bodyFallingSound.play();
 
     startBtn.disabled = true;
     resetBtn.disabled = false;
@@ -72,7 +74,7 @@ startBtn.addEventListener('click', () => {
         //element.style.border = "1px solid black";
     });
 
-    // Création du compteur de vie et du personnage
+    // Création du compteur de vie, du personnage et du coffre
     let createPerso = document.createElement("div");
     createPerso.setAttribute("id", "perso");
     createPerso.setAttribute("class", "perso");
@@ -121,7 +123,6 @@ startBtn.addEventListener('click', () => {
                     isGood = true;
                     spanTab[i].innerHTML = this.dataset.value;
                     imagePerso.src = "assets/img/perso.png";
-
                     score++;
                 }
                 this.disabled = true;
@@ -138,6 +139,7 @@ startBtn.addEventListener('click', () => {
 
                 setTimeout(function() {
                     createRock.remove();
+                    rockSound.play();
                     imagePerso.src = "assets/img/fail_perso.png";
                 }, 500);
             } else {
@@ -150,12 +152,12 @@ startBtn.addEventListener('click', () => {
                 keybord.forEach(element => {
                     element.disabled = true;
                 });
-
+                winSound.play();
+                winSound.volume = 0.5;
                 chest.src = "assets/img/open_chest.png";
                 chest.style.width = "50%";
                 chest.style.bottom = "50%";
                 chest.style.left = "25%";
-
                 imagePerso.src = "assets/img/win_perso.png";
             }
 
@@ -165,6 +167,7 @@ startBtn.addEventListener('click', () => {
                     element.disabled = true;
                 });
                 setTimeout(function() {
+                    bodySound.play();
                     imagePerso.src = "assets/img/death_perso.png";
                     imagePerso.style.height = "60px";
                     imagePerso.style.position = "absolute";
