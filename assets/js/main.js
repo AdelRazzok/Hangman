@@ -23,6 +23,7 @@ const myWords = [
     "MARTYRE"
 ];
 
+const gameMusic = new Audio("./assets/sounds/game_music.mp3");
 const bodySound = new Audio("./assets/sounds/body_falling.mp3");
 const rockSound = new Audio("./assets/sounds/destroy_rock.wav");
 const winSound = new Audio("./assets/sounds/win_sound.mp3");
@@ -30,9 +31,11 @@ const winSound = new Audio("./assets/sounds/win_sound.mp3");
 var nbTry = 7;
 var score = 0;
 
-
 // Le jeu démare au click sur le bouton "Commencer"
 startBtn.addEventListener('click', () => {
+
+    gameMusic.play();
+    gameMusic.volume = 0.1;
 
     startBtn.disabled = true;
     resetBtn.disabled = false;
