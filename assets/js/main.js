@@ -4,14 +4,21 @@ const resetBtn = document.querySelector('button[data-type="reset"]');
 
 const details = document.getElementById("details");
 
-const myWords = ["TESTMOI"];
-
-// const myWords = [
-//     "ADMIRER",
-//     "BOISSON",
-//     "CABARET",
-
-// ];
+const myWords = [
+    "ADMIRER",
+    "BOISSON",
+    "CABARET",
+    "DOMINOS",
+    "ECLAIRS",
+    "FRAISES",
+    "GATERIE",
+    "HELICES",
+    "INDIENS",
+    "JOUEURS",
+    "KETCHUP",
+    "LOURDER",
+    "MARTYRE"
+];
 
 var nbTry = 7;
 var score = 0;
@@ -22,6 +29,8 @@ function getRandomInt(max) {
 }
 
 startBtn.addEventListener('click', () => {
+
+    bodyFallingSound.play();
 
     startBtn.disabled = true;
     resetBtn.disabled = false;
