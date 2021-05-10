@@ -5,6 +5,10 @@
     font-size: 1rem;
 }
 
+body {
+    background-color: rgb(212, 119, 76);
+}
+
 .container {
     width: 100%;
     height: 100%;
@@ -41,9 +45,11 @@
 @keyframes falling {
     0% {
         top: 20%;
+        transform: rotate(0deg);
     }
     100% {
         top: 60%;
+        transform: rotate(360deg);
     }
 }
 
