@@ -74,7 +74,6 @@ startBtn.addEventListener('click', () => {
 
     myCutDivs.forEach(element => {
         element.style.width = "500px";
-        //element.style.border = "1px solid black";
     });
 
     // Création du compteur de vie, du personnage et du coffre
@@ -156,7 +155,6 @@ startBtn.addEventListener('click', () => {
                     element.disabled = true;
                 });
                 winSound.play();
-                winSound.volume = 0.5;
                 chest.src = "assets/img/open_chest.png";
                 chest.style.width = "50%";
                 chest.style.bottom = "50%";
@@ -171,6 +169,7 @@ startBtn.addEventListener('click', () => {
                 });
                 setTimeout(function() {
                     bodySound.play();
+                    gameMusic.pause();
                     imagePerso.src = "assets/img/death_perso.png";
                     imagePerso.style.height = "60px";
                     imagePerso.style.position = "absolute";
